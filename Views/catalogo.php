@@ -326,21 +326,24 @@
             $(this).closest(".item_producto").find(".num_quantity").text(i);
             $(this).closest(".item_producto").attr("item_quantity", i);
         });
-    </script>
-    
-    
-    <script>
-        //var url = "http://localhost:8080/BApp/Apis/Catalogo/Get_Categories.php";
-       //if(posicion == 0){
-    //       var data = {
-    //           opc = posicion
-    //       }
-    //       $.getJSON(url, data, function(r){
-    //        alert(r);
-    //    });
-    //   }
+        
+       
+        var url = "http://localhost:8080/BApp/Apis/Catalogo/Get_Categories.php";
+       if(posicion == 0){
+           var opc = posicion;
+           $.getJSON(url, opc, function(r){
+                $.each(r, function(i, e){
+                    alert(e.nombre);
+                });
+            
+           });
+       }
+
         
     </script>
+    
+    
+  
 </body>
 
 </html>
